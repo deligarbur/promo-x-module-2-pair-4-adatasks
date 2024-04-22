@@ -28,16 +28,25 @@ const renderTasks = (array) => {
 
 renderTasks(tasks);
 
-
-const filterTask = tasks.filter((tasks) => tasks.completed == true);
-console.log(filterTask);
-
-
-
-// function filterTasks() {
-//   if (tasks.completed === true) {
-//     taskList.classList.add('tachado');
+// task es un objeto con la estrucuta { name: 'Recoger setas en el campo', completed: true }
+// function renderTask(task) {
+//   let li = "";
+//   if (task.completed === true) {
+//     li = `<li class="tachado">
+//     <input type="checkbox">
+//     ${task.name}
+//     </li>`;
+//   } else {
+//     li = `<li>
+//     <input type="checkbox">
+//     ${task.name}
+//     </li>`;
 //   }
-// };
+//   taskList.innerHTML = li;
+// }
 
-// filterTasks();
+
+
+
+// const filterTask = tasks.filter((tasks) => tasks.completed == true);
+
