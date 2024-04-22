@@ -13,13 +13,31 @@ const tasks = [
 ];
 
 console.log(tasks);
-function renderTask(tasks) {
-    taskList.innerHTML += `
- <li>
- ${tasks}
-    </li>` ;
-   
-}
- 
-  renderTask();
-  
+
+
+const renderTasks = (array) => {
+  taskList.innerHTML = '';
+  array.forEach((item) => {
+    //meter if aqui
+    taskList.innerHTML += `<li>
+    <input type="checkbox">
+    ${item.name}
+    </li>`
+  });
+};
+
+renderTasks(tasks);
+
+
+const filterTask = tasks.filter((tasks) => tasks.completed == true);
+console.log(filterTask);
+
+
+
+// function filterTasks() {
+//   if (tasks.completed === true) {
+//     taskList.classList.add('tachado');
+//   }
+// };
+
+// filterTasks();
