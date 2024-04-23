@@ -18,35 +18,37 @@ console.log(tasks);
 const renderTasks = (array) => {
   taskList.innerHTML = '';
   array.forEach((item) => {
-    //meter if aqui
-    taskList.innerHTML += `<li>
-    <input type="checkbox">
+    if(item.completed === true){
+      taskList.innerHTML += `<li class="tachado">
+    <input checked type="checkbox" class="js-input">
     ${item.name}
     </li>`
+    }else{
+      taskList.innerHTML += `<li>
+    <input type="checkbox" class="js-input">
+    ${item.name}
+    </li>`
+    }
+    
   });
 };
 
 renderTasks(tasks);
 
-// task es un objeto con la estrucuta { name: 'Recoger setas en el campo', completed: true }
-// function renderTask(task) {
-//   let li = "";
-//   if (task.completed === true) {
-//     li = `<li class="tachado">
-//     <input type="checkbox">
-//     ${task.name}
-//     </li>`;
-//   } else {
-//     li = `<li>
-//     <input type="checkbox">
-//     ${task.name}
-//     </li>`;
-//   }
-//   taskList.innerHTML = li;
-// }
+const inputCheck = document.querySelectorAll('.js-input');
 
+handleClick =(ev) =>{
+  const checked = ev.target;
+  console.log(checked);
 
+}
 
+for (const item of inputCheck){
+  item.addEventListener('click', handleClick);
+  
+}
+ /* Duda donde meter el if ( si es la manejadora o en el handle) y si necesitamos un bucle para hacer el if dentro.*/
+ // Una vez soucionado tendremos que hacer un map para modificar la clase y un classlist.add para añadir la clase de tachado
 
 // const filterTask = tasks.filter((tasks) => tasks.completed == true);
 
