@@ -35,20 +35,37 @@ const renderTasks = (array) => {
 
 renderTasks(tasks);
 
-const inputCheck = document.querySelectorAll('.js-input');
+// const inputCheck = document.querySelectorAll('.js-input');
+
 
 handleClick =(ev) =>{
   const checked = ev.target;
-  console.log(checked);
+  for (const itemcheked of tasks) {
+    
+  }
 
 }
 
-for (const item of inputCheck){
-  item.addEventListener('click', handleClick);
+taskList.addEventListener('click', handleClick);
   
-}
+
  /* Duda donde meter el if ( si es la manejadora o en el handle) y si necesitamos un bucle para hacer el if dentro.*/
  // Una vez soucionado tendremos que hacer un map para modificar la clase y un classlist.add para añadir la clase de tachado
 
 // const filterTask = tasks.filter((tasks) => tasks.completed == true);
 
+// Filtrar tareas
+
+const btnSearch = document.querySelector('.js-btn-filter');
+const filterInput = document.querySelector('.js-text-task-filter');
+
+handleSearch = () => {
+  const valueInput = filterInput.value;
+  taskList.innerHTML = '';
+//   for (const iterator of object) {
+    
+//   }
+}
+
+
+btnSearch.addEventListener('click', handleSearch);
